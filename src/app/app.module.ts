@@ -6,7 +6,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BsNavbarComponent} from './bs-navbar/bs-navbar.component';
 import {HomeComponent} from './home/home.component';
@@ -24,6 +24,8 @@ import {UserService} from './user.service';
 import {AdminAuthGuard} from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import {CategoryService} from './category.service';
+import {ProductService} from './product.service';
+import {CustomFormsModule} from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {CategoryService} from './category.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -62,7 +66,7 @@ import {CategoryService} from './category.service';
       {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard]}
     ])
   ],
-  providers: [AuthService, AuthGuard, AdminAuthGuard, UserService, CategoryService],
+  providers: [AuthService, AuthGuard, AdminAuthGuard, UserService, CategoryService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
