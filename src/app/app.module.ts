@@ -26,6 +26,7 @@ import {ProductFormComponent} from './admin/product-form/product-form.component'
 import {CategoryService} from './category.service';
 import {ProductService} from './product.service';
 import {CustomFormsModule} from 'ng2-validation';
+import {DataTableModule} from 'angular-4-data-table';
 
 @NgModule({
   declarations: [
@@ -47,13 +48,14 @@ import {CustomFormsModule} from 'ng2-validation';
     FormsModule,
     ReactiveFormsModule,
     CustomFormsModule,
+    DataTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       // for everyone
-      {path: '', component: HomeComponent},
+      {path: '', component: ProductsComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
       {path: 'login', component: LoginComponent},
