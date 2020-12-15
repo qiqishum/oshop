@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body { padding-top: 80px; }
+
+
+
+
+
+
+.list-group-item.active {
+  background-color: #c1d62e;
+
+  border-color: #c1d62e;
+
+}

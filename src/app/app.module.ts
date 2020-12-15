@@ -34,6 +34,7 @@ import {ProductQuantityComponent} from './product-quantity/product-quantity.comp
 import {OrderService} from './order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     ProductCardComponent,
     ProductQuantityComponent,
     ShoppingCartSummaryComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     NgbModule.forRoot(),
     RouterModule.forRoot([
       // for everyone
-      {path: '', component: ProductsComponent},
+      {path: '', component: LandingPageComponent},
+      //{path: '', component: ProductsComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
       {path: 'login', component: LoginComponent},

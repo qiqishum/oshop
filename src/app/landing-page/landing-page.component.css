@@ -1,0 +1,46 @@
+body {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+
+
+.image {
+
+  display: flex;
+filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.segment {
+  position: relative;
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+#artificial {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.divider {
+  font-size: x-large;
+}
+
+.button {
+  background-color: #c1d62e;
+
+  border-color: #c1d62e;
+  cursor: pointer;
+
+}
+
+.footer {
+  padding-top: 10px;
+}

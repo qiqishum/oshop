@@ -1,4 +1,9 @@
-
+.body { padding-top: 80px; }
 .dropdown-toggle { 
   cursor: pointer;
+}
+
+
+.navbar-light .navbar-brand {
+  color: #c1d62e;
 }
