@@ -1,6 +1,14 @@
 
+<landing-page *ngIf="router.url === '/'">
+</landing-page>
 
+<div *ngIf="router.url !== '/'"
+class="bodyTop"
+>
+
+<bs-navbar></bs-navbar>
 
 <div class="container">
   <router-outlet></router-outlet>
+</div>
 </div>

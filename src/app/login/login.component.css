@@ -1,0 +1,11 @@
+.button {
+  background-color: #c1d62e;
+margin-left: 8px;
+  border-color: #c1d62e;
+  cursor: pointer;
+}
+
+.logo{
+  width: 35px;
+  height: 35px;
+}

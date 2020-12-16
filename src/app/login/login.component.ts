@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,11 +10,19 @@ import {AuthService} from '../auth.service';
 })
 export class LoginComponent {
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,
+              private router: Router) {
   }
 
-  login() {
-    this.auth.login();
+  loginGoogle() {
+    this.auth.loginGoogle();
+    // this.router.navigate(['/products']);
   }
 
+
+
+  loginGithub() {
+this.auth.loginGithub();
+    this.router.navigate(['/products']);
+  }
 }
