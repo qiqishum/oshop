@@ -1,0 +1,50 @@
+<p>
+  <input
+    #filteredRecipe
+    (keyup)="getRecipeByName(filteredRecipe.value)"
+    type="text" class="form-control inputfil" placeholder="Don't like what we pick for you? Search here...">
+</p>
+
+  <div class="card mb-3" *ngFor="let r of filteredRecipe$">
+    <img src="{{r.image}}" class="card-img-top w-50 p-3 align-self-center" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{r.title}}</h5>
+      <p class="card-text"> {{r.instructions}}</p>
+
+      <p class="card-text recipifooter"><small class="text-muted ">Ready in {{r.readyInMinutes}} minutes</small>
+
+        <small class="text-muted text-right">Serving {{r.servings}} <i class="fas fa-user"></i> ppl</small>
+      </p>
+    </div>
+  </div>
+
+
+
+<!--<div *ngIf="randomRecipe$; else searchByUser" >-->
+
+  <div class="d-grid gap-2 mx-auto ">
+
+    <button
+      class="form-control clickbtn btn hvr-icon-grow"
+      (click)="getRecipe()"
+      type="button"
+    >Get another recipe <i class="fas fa-search hvr-icon"></i></button>
+  </div>
+
+  <div>
+
+    <div class="card mb-3" *ngFor="let r of randomRecipe$">
+      <img src="{{r.image}}" class="card-img-top w-50 p-3 align-self-center" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{r.title}}</h5>
+        <p class="card-text"> {{r.instructions}}</p>
+
+        <p class="card-text recipifooter"><small class="text-muted ">Ready in {{r.readyInMinutes}} minutes</small>
+
+          <small class="text-muted text-right">Serving {{r.servings}} <i class="fas fa-user"></i> ppl</small>
+        </p>
+      </div>
+    </div>
+
+  </div>
+<!--</div>-->
