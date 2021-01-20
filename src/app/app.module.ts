@@ -35,6 +35,9 @@ import {OrderService} from './order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import {RecipeService} from './recipe.service';
+import { RecipeComponent } from './recipe/recipe.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ProductQuantityComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +70,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       // for everyone
@@ -73,6 +78,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
       {path: 'home', component: HomeComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
+      {path: 'recipe', component: RecipeComponent},
       {path: 'login', component: LoginComponent},
       // for logged-in normal user
       {path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard]},
@@ -88,7 +94,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   ],
   providers: [AuthService, AuthGuard, AdminAuthGuard, UserService,
     CategoryService, ProductService, ShoppingCartService,
-    OrderService],
+    OrderService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

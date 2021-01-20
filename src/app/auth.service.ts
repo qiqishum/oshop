@@ -40,7 +40,7 @@ user$: Observable<firebase.User>;
  get appUser$(): Observable<AppUser> {
    return this.user$
      .switchMap(user => {
-       if (user) return  this.userService.get(user.uid); console.log(user);
+       if (user) return  this.userService.get(user.uid);
        // @ts-ignore
        return Observable.of(null);
 

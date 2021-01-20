@@ -31,7 +31,7 @@
     "firebase-tools": "^8.16.2",
     "g": "^2.0.1",
     "ng2-validation": "^4.2.0",
-    "rxjs": "^5.4.1",
+    "rxjs": "^5.5.12",
     "rxjs-compat": "^6.6.3",
     "zone.js": "^0.8.14"
   },

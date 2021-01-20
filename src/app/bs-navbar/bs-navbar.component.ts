@@ -25,6 +25,7 @@ export class BsNavbarComponent implements OnInit {
     this.cart$ = await this.shoppingCartService.getCart();
   }
 
+
   logout() {
     this.auth.logout();
     this.router.navigate(['/']);
