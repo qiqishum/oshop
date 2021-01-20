@@ -12,8 +12,8 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link hvr-icon-grow" routerLink="/shopping-cart">
-            Shopping Cart <i class="fas fa-cart-plus hvr-icon"></i>
+          <a class="nav-link" routerLink="/shopping-cart">
+            Shopping Cart <i class="fas fa-cart-plus"></i>
             <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
             {{ cart.totalItemsCount }}
           </span>

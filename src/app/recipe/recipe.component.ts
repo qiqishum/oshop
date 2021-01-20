@@ -54,7 +54,7 @@ this.subscription = this.recipeService.searchRecipeByName(f)
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+
   }
 
 }
