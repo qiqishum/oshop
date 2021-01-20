@@ -1,9 +1,9 @@
 <div class="sticky-top">
   <div class="list-group">
-    <a class="list-group-item list-group-item-action"
+    <a class="list-group-item list-group-item-action hvr-icon-grow"
        [class.active]="!category"
        routerLink="/products">
-      All Categories
+      All Categories <i class="fab fa-elementor hvr-icon"></i>
     </a>
     <a
       *ngFor="let c of categories$ | async"

@@ -5,8 +5,7 @@ import {Recipe} from './models/recipe';
 import {debounceTime} from 'rxjs/operator/debounceTime';
 import {distinctUntilChanged} from 'rxjs/operator/distinctUntilChanged';
 import {switchMap} from 'rxjs/operator/switchMap';
-import {pluck} from 'rxjs/operators';
-
+import {map, pluck} from 'rxjs/operators';
 
 
 @Injectable()
@@ -21,11 +20,9 @@ export class RecipeService {
 
 
   constructor(private httpClient: HttpClient) {
-
   }
 
-
-   getRandomRecipe() {
+  getRandomRecipe() {
     // @ts-ignore
     return this.httpClient.get<Recipe[]>('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random',
       {headers: this.headers}
@@ -33,19 +30,21 @@ export class RecipeService {
       .pipe(pluck('recipes'));
   }
 
-  searchTry(terms: Observable<string>) {
-   return  terms.switchMap(term => this.searchEntry(term));
-     // .pipe(
-     //  debounceTime(400),
-     //  distinctUntilChanged(), switchMap(term => this.searchEntries(term)));
-     //
+  searchRecipeByName(query) {
+    // @ts-ignore
+    // @ts-ignore
+    return this.httpClient
+      .get<Recipe[]>(this.searchUrl + this.queryUrl + query, {headers: this.headers});
+
   }
 
-  searchEntry(term) {
-    return this.httpClient
-      .get(this.searchUrl + this.queryUrl + term, {headers: this.headers}).map(res => res || []);
-      // .pipe(
-      //   map(res => res || []));
-  }
+  // SearchFinal(terms: Observable<string>) {
+  //   // @ts-ignore
+  //   // @ts-ignore
+  //   // @ts-ignore
+  //   return terms.pipe(
+  //     debounceTime(400),
+  //     distinctUntilChanged(), switchMap(term => this.searchRecipeByName(term)));
+  // }
 
 }

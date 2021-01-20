@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
 
   <div class="container">
-    <a class="navbar-brand" routerLink="/products">
-      <i class="fab fa-envira"></i>Home Page
+    <a class="navbar-brand hvr-icon-grow" routerLink="/products">
+      <i class="fab fa-envira hvr-icon"></i>Home Page
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +12,8 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/shopping-cart">
-            Shopping Cart <i class="fas fa-cart-plus"></i>
+          <a class="nav-link hvr-icon-grow" routerLink="/shopping-cart">
+            Shopping Cart <i class="fas fa-cart-plus hvr-icon"></i>
             <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
             {{ cart.totalItemsCount }}
           </span>
@@ -21,8 +21,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/recipe">
-            Pick a recipe <i class="fas fa-utensils"></i>
+          <a class="nav-link hvr-icon-grow" routerLink="/recipe">
+            Pick a recipe <i class="fas fa-utensils hvr-icon"></i>
           </a>
         </li>
       </ul>
